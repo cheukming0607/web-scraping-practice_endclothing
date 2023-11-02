@@ -20,6 +20,7 @@ Those needed library is written down into requirement.txt.
 
 ## Web scrapping with selenium
 ![](https://blog.agamitechnologies.com/wp-content/uploads/2020/11/selenium-4.png)
+
 In this project, selenium is chosen because there are some specific tasks are well performed by this library. Therefore, the following are some highlight about the web scrapping part of this project. 
 
 ### Using selenium Webdriver to perform scrolling
