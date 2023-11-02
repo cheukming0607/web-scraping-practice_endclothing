@@ -25,6 +25,7 @@ In this project, selenium is chosen because there are some specific tasks are we
 
 ### Using selenium Webdriver to perform scrolling
 ![The scrolling bar of element "department"](scrolling.png)
+
 "endclothing.com" is a dynamic website. Most of the information only appears when it shows on the window. Therefore, if we want to retrieve the hidden data of the webpage, scrolling actions are needed to let the webpage render that information. Selenium can execute JavaScript code to perform scrolling actions. Here is an example:
 
     depts  =  driver.find_elements(By.XPATH, '//div[@data-test-id="department_FilterItem"]') # Using XPATH to point to the department items
@@ -35,12 +36,14 @@ The above example uses `driver.find_elements()` to point to the desired element 
 
 ### Using product count to calculate the number of pages
 ![The product count of each page](product_count.png)
+
 After having all the departments and color combinations of clothes, we need to know how many pages each combination has. Therefore, we have to get the product counter first, then divide it by 120, which is the number of products shown on each page. Then we can repeatedly request the webpage by only changing the "page" parameter like this: 
 
     driver.get(F"https://www.endclothing.com/ca/clothing?colour={color_name}&department={dept_name}&page={page_number}")
 
 ### Point to a product card first, then point to the useful information
 ![The product card element on endclothing.com](product_card.png)
+
 When doing web scrapping, there are many elements that share the same ID. Therefore, I try to point to the ID of each product card first. After receiving each product card, I point to the name, color, and price of each product card with the following code:
 Point to each product card:
 
@@ -59,6 +62,7 @@ Point to the name, color, and price of the corresponding product card:
 
 ### Check whether the product card information is empty
 ![The if block to check the empty element](empty.png)
+
 When doing the web scrapping, some unexpected elements pop out. These elements are blocking the information that we want to extract from the website. Therefore, after the web scrap information from a page, the value of name, color, and price need to be checked with the following code:
 
     if  name  ==  ''  or  color  ==  ''  or  price  ==  '':
@@ -90,7 +94,7 @@ To web scrap all the combinations of departments and colors, there are 55x19, wh
 			    print(exc)
 The `max_worker` indicated the maximum number of threads in the thread pool. The upper limit of the number of threads didn't apply due to the network performance. 
 
-For the full Jupyter notebook contain all the web scrapping process, please check out here: [enter link description here](https://xxx)
+For the full Jupyter notebook contain all the web scrapping process, please check out [here](web_scrapping.ipynb)
 
 
 ## Analyse the data after the web scrapping
@@ -114,7 +118,7 @@ After analyzing that information, here are the three most interesting findings:
  3. There is no significant difference in the median price between the top (165) and bottom (165).
  ![](top_bottom_boxplot.png)
 
-For the full Jupyter notebook contain all the data analysis process, please check out here: [enter link description here](https://xxx)
+For the full Jupyter notebook contain all the data analysis process, please check out [here](data_analysis.ipynb)
 
 ## Conclusion
 
