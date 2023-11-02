@@ -24,7 +24,7 @@ Those needed library is written down into requirement.txt.
 In this project, selenium is chosen because there are some specific tasks are well performed by this library. Therefore, the following are some highlight about the web scrapping part of this project. 
 
 ### Using selenium Webdriver to perform scrolling
-![The scrolling bar of element "department"](scrolling.png)
+![The scrolling bar of element "department"](scrolling.png =200)
 
 "endclothing.com" is a dynamic website. Most of the information only appears when it shows on the window. Therefore, if we want to retrieve the hidden data of the webpage, scrolling actions are needed to let the webpage render that information. Selenium can execute JavaScript code to perform scrolling actions. Here is an example:
 
