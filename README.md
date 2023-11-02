@@ -25,6 +25,7 @@ In this project, selenium is chosen because there are some specific tasks are we
 
 ### Using selenium Webdriver to perform scrolling
 [<img src="scrolling.png" width="50%"/>](scrolling.png)
+*The scrolling bar of the department element*
 
 "endclothing.com" is a dynamic website. Most of the information only appears when it shows on the window. Therefore, if we want to retrieve the hidden data of the webpage, scrolling actions are needed to let the webpage render that information. Selenium can execute JavaScript code to perform scrolling actions. Here is an example:
 
