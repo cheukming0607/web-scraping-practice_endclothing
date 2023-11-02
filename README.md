@@ -24,7 +24,7 @@ Those needed library is written down into requirement.txt.
 In this project, selenium is chosen because there are some specific tasks are well performed by this library. Therefore, the following are some highlight about the web scrapping part of this project. 
 
 ### Using selenium Webdriver to perform scrolling
-[<img src="scrolling.png" width="50%" class="center"/>](scrolling.png)
+[<img src="scrolling.png" width="50%"/>](scrolling.png)
 
 "endclothing.com" is a dynamic website. Most of the information only appears when it shows on the window. Therefore, if we want to retrieve the hidden data of the webpage, scrolling actions are needed to let the webpage render that information. Selenium can execute JavaScript code to perform scrolling actions. Here is an example:
 
@@ -35,14 +35,14 @@ In this project, selenium is chosen because there are some specific tasks are we
 The above example uses `driver.find_elements()` to point to the desired element first. After that, `driver.execute_script("arguments[0].scrollIntoView();", depts[i])` perform the scrolling action until the bottom of the element.
 
 ### Using product count to calculate the number of pages
-![The product count of each page](product_count.png)
+[<img src="product_count.png" width="50%"/>](product_count.png)
 
 After having all the departments and color combinations of clothes, we need to know how many pages each combination has. Therefore, we have to get the product counter first, then divide it by 120, which is the number of products shown on each page. Then we can repeatedly request the webpage by only changing the "page" parameter like this: 
 
     driver.get(F"https://www.endclothing.com/ca/clothing?colour={color_name}&department={dept_name}&page={page_number}")
 
 ### Point to a product card first, then point to the useful information
-![The product card element on endclothing.com](product_card.png)
+[<img src="product_card.png" width="50%"/>](product_card.png)
 
 When doing web scrapping, there are many elements that share the same ID. Therefore, I try to point to the ID of each product card first. After receiving each product card, I point to the name, color, and price of each product card with the following code:
 Point to each product card:
@@ -61,7 +61,7 @@ Point to the name, color, and price of the corresponding product card:
 	    print(f"{product_index}, name: {name}, color: {color}, price: {price}")
 
 ### Check whether the product card information is empty
-![The if block to check the empty element](empty.png)
+[<img src="empty.png" width="50%"/>](empty.png)
 
 When doing the web scrapping, some unexpected elements pop out. These elements are blocking the information that we want to extract from the website. Therefore, after the web scrap information from a page, the value of name, color, and price need to be checked with the following code:
 
@@ -111,12 +111,12 @@ Here are a few analyses that are done with the data scrapped from the endclothin
 After analyzing that information, here are the three most interesting findings:
 
  1. "T-Shirts" is the most popular item listed on endclothing.com. It occupied 26% (8329) of all of the products (32542). Significantly much more than "Hoodies" (9%, 2771), and "Sweats" (8%, 2698) which followed as second and third place.
- ![](dept_bar.png)
- ![](dept_pie.png)
+ ![<img src="dept_bar.png" width="50%"/>](dept_bar.png)
+ ![<img src="dept_pie.png" width="50%"/>](dept_pie.png)
  2. The three most listed colors of cloth on endclothing.com are "Black" (9269), "Blue" (5629), and "Green" (3887).
- ![](treemap.png)
+ ![<img src="treemap.png" width="50%"/>](treemap.png)
  3. There is no significant difference in the median price between the top (165) and bottom (165).
- ![](top_bottom_boxplot.png)
+ ![<img src="top_bottom_boxplot.png" width="50%"/>](top_bottom_boxplot.png)
 
 For the full Jupyter notebook contain all the data analysis process, please check out [here](data_analysis.ipynb)
 
