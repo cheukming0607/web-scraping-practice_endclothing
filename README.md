@@ -1,4 +1,4 @@
-# web-scraping-practice
+# Web Scraping practice: End clothing
 
 ## Introduction
 ![endclothing.com](endclothing_main.png)
